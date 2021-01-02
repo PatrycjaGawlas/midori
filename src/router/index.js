@@ -18,7 +18,12 @@ Vue.use(VueRouter)
   {
     path: '/oferta',
     name: 'Oferta',
-    component: () => import('../views/Offer.vue')
+    component: () => import('../components/Offers.vue')
+  },
+  {
+    path: '/oferta/:name',
+    name: 'Detale',
+    component: () => import('../components/OfferDetail.vue'),
   },
   {
     path: '/realizacje',
