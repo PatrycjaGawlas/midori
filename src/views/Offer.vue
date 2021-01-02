@@ -10,12 +10,12 @@
       </div>
     </div>
     <div class="offer__section">
+      <img class="offer__image offer__image-order" src="../assets/project.png"/>
       <div class="offer__section__text">
         <div class="offer__section__text__title">Projekt</div>
         <div class="offer__section__text__description">Prawidłowo zaprojektowany ogród będzie tańszy i łatwy w utrzymaniu ale przede wszystkim coraz piękniejszy z biegiem lat.</div>
         <b-button class="offer__section__text__button" pill variant="outline-secondary">Wiecej</b-button>
       </div>
-      <img class="offer__image" src="../assets/project.png"/>
     </div>
     <div class="offer__section">
       <img class="offer__image" src="../assets/light.png"/>
@@ -26,34 +26,34 @@
       </div>
     </div>
     <div class="offer__section">
+      <img class="offer__image offer__image-order" src="../assets/caring.png"/>
       <div class="offer__section__text">
         <div class="offer__section__text__title">Pielęgnacja</div>
         <div class="offer__section__text__description">Każdy, nawet najmniej wymagający ogród wymaga od nas ciągłej troski.</div>
         <b-button class="offer__section__text__button" pill variant="outline-secondary">Wiecej</b-button>
       </div>
-      <img class="offer__image" src="../assets/caring.png"/>
+    </div>
+    <div class="offer__section">
+      <img class="offer__image" src="../assets/tree.png"/>
+      <div class="offer__section__text">
+        <div class="offer__section__text__title">Sadzenie większych drzew</div>
+        <div class="offer__section__text__description">Sadząc większe drzewa, oszczędzamy czas który musi upłynąć do uzyskania finalnego wyglądu ogrodu.</div>
+        <b-button class="offer__section__text__button" pill variant="outline-secondary">Wiecej</b-button>
+      </div>
+    </div>
+    <div class="offer__section">
+      <img class="offer__image offer__image-order" src="../assets/wood.png"/>
+      <div class="offer__section__text">
+        <div class="offer__section__text__title">Kamień i drewno</div>
+        <div class="offer__section__text__description">Kamień i drewno to ekologiczne, trwałe i zawsze modne materiały, z których można wykonać wszystkie elementy małej architektury pasujące do każdego ogrodu.</div>
+        <b-button class="offer__section__text__button" pill variant="outline-secondary">Wiecej</b-button>
+      </div>
     </div>
     <div class="offer__section">
       <img class="offer__image" src="../assets/flowers.png"/>
       <div class="offer__section__text">
         <div class="offer__section__text__title">Rabaty z polnymi kwiatami</div>
         <div class="offer__section__text__description">Chcąc mieć zdrowy ogród warto zadbać o różnorodność nie tylko flory ale też fauny. Obecność wielu gatunków owadów, gadów, płazów i ptaków znacznie przyczynia się do naturalnego eliminowania szkodników ogrodowych.</div>
-        <b-button class="offer__section__text__button" pill variant="outline-secondary">Wiecej</b-button>
-      </div>
-    </div>
-    <div class="offer__section">
-      <div class="offer__section__text">
-        <div class="offer__section__text__title">Sadzenie większych drzew</div>
-        <div class="offer__section__text__description">Sadząc większe drzewa, oszczędzamy czas który musi upłynąć do uzyskania finalnego wyglądu ogrodu.</div>
-        <b-button class="offer__section__text__button" pill variant="outline-secondary">Wiecej</b-button>
-      </div>
-      <img class="offer__image" src="../assets/tree.png"/>
-    </div>
-    <div class="offer__section">
-      <img class="offer__image" src="../assets/wood.png"/>
-      <div class="offer__section__text">
-        <div class="offer__section__text__title">Kamień i drewno</div>
-        <div class="offer__section__text__description">Kamień i drewno to ekologiczne, trwałe i zawsze modne materiały, z których można wykonać wszystkie elementy małej architektury pasujące do każdego ogrodu.</div>
         <b-button class="offer__section__text__button" pill variant="outline-secondary">Wiecej</b-button>
       </div>
     </div>
@@ -88,12 +88,16 @@
 
       &__section {
         display: flex;
+        flex-direction: column;
+        @media (min-width: 768px) {
+          flex-direction: row;
+        }
         &__text {
           display: flex;
           justify-content: center;
           align-items: center;
           flex-direction: column;
-          padding: 40px;
+          padding: 30px;
           &__title {
             text-align: center;
             font-weight: 700;
@@ -105,18 +109,24 @@
               font-size: 22px;
             }
             @media (min-width: 768px) {
+              font-size: 22px;
+            }
+            @media (min-width: 992px) {
               font-size: 28px;
             }
           }
           &__description {
             text-align: center;
             margin-bottom: 24px;
-            // @media (min-width: 576px) {
-            //   font-size: 22px;
-            // }
+            @media (min-width: 576px) {
+              font-size: 14px;
+            }
             // @media (min-width: 768px) {
             //   font-size: 28px;
             // }
+            @media (min-width: 992px) {
+              font-size: 16px;
+            }
           }
           &__button {
             border-color: #2a7d2e;
@@ -133,10 +143,18 @@
       }
 
       &__image {
-        width: 50%;
+        width: 100%;
         height: 300px;
         object-fit: cover;
         object-position: top;
+        @media (min-width: 768px) {
+          width: 50%;
+        }
+      }
+      &__image-order {
+        @media (min-width: 768px) {
+          order: 2;
+        }
       }
   }
 </style>
