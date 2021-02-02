@@ -28,7 +28,7 @@
           <router-link to="/realizacje" v-slot="{ href }">
             <b-nav-item :href="href">Realizacje</b-nav-item>
           </router-link>
-          <router-link to="/kontakt">
+          <router-link to="/kontakt" v-slot="{ href }">
             <b-nav-item :href="href" class="d-inline d-md-none">Kontakt</b-nav-item>
             <button type="button" class="d-none d-md-inline navbar__contact-button btn btn-success">KONTAKT</button>
           </router-link>
@@ -50,9 +50,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// @import "~bootstrap/scss/mixins";
-// @import "~bootstrap/scss/variables";
-// @import "~bootstrap/scss/functions";
 
 .navbar {
   font-family: 'Montserrat';
