@@ -19,6 +19,14 @@ export default {
 @font-face {
 	font-family: 'Montserrat';
 	src: local("Montserrat"),
+    url('./fonts/Montserrat-Light.ttf') format('truetype');
+	font-weight: 200;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Montserrat';
+	src: local("Montserrat"),
     url('./fonts/Montserrat-Regular.ttf') format('truetype');
 	font-weight: 400;
 	font-style: normal;
