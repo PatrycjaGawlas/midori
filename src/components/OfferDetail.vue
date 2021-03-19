@@ -1,7 +1,10 @@
 <template>
   <div class="offer-details">
     <div class="offer-details__header">
-      <div class="offer-details__header-title">{{pageTitle}}</div>
+      <div class="offer-details__header-overlay"></div>
+      <div class="offer-details__header-title">
+        <span>{{pageTitle}}</span>
+      </div>
       <img class="offer-details__header-image" :src="pagePhoto"/>
     </div>
     <div class="offer-details__body">
@@ -11,9 +14,14 @@
           <div v-for="item in menuItems" 
             :key="item.page" 
             @click="goToDetails(item.page)" 
-            class="offer-details__menu-item">
+            class="offer-details__menu-item"
+            :class="{'offer-details__menu-item--selected': currentPageData.page === item.page}">
             {{item.title}}
           </div>
+        </div>
+        <div class="offer-details__menu-projects" @click="goToRealizations">
+          Wszystkie realizacje
+          <BIconArrowRightCircleFill font-scale="1" variant="light"/>
         </div>
       </div>
       <div class="offer-details__right">
@@ -25,6 +33,7 @@
         </div>
         <div class="offer-details__right-title">Realizacje</div>
         <div class="offer-details__right-image-container">
+          <div class=""></div>
           <img v-for="photo in pagePhotos" 
           :key="photo.src" @click="openGallery(photo.src)" 
           :src="photo.src" 
@@ -60,7 +69,6 @@ export default {
           {src: require('../assets/offers/water/1.jpg')},
           {src: require('../assets/offers/water/3.jpg')},
           {src: require('../assets/offers/water/4.jpg')},
-          {src: require('../assets/offers/water/5.jpg')},
           {src: require('../assets/offers/water/6.jpg')}
         ]
       },
@@ -109,15 +117,15 @@ export default {
         ],
         mainPhoto: require('../assets/offers/light/3.jpg'),
         photos: [
-          {src: require('../assets/offers/light/1.jpg')},
+          {src: require('../assets/offers/light/1.jpg'), isVertical: true},
           {src: require('../assets/offers/light/2.jpg')},
           {src: require('../assets/offers/light/3.jpg')},
-          {src: require('../assets/offers/light/4.jpg')},
+          {src: require('../assets/offers/light/4.jpg'), isVertical: true},
           {src: require('../assets/offers/light/5.jpg')},
           {src: require('../assets/offers/light/6.jpg')},
-          {src: require('../assets/offers/light/7.jpg')},
-          {src: require('../assets/offers/light/8.jpg')},
-          {src: require('../assets/offers/light/9.jpg')}
+          {src: require('../assets/offers/light/7.jpg'), isVertical: true},
+          {src: require('../assets/offers/light/8.jpg'), isVertical: true},
+          {src: require('../assets/offers/light/9.jpg'), isVertical: true}
         ]
       },
       {
@@ -134,21 +142,21 @@ export default {
           {src: require('../assets/offers/caring/2.jpg')},
           {src: require('../assets/offers/caring/3.jpg')},
           {src: require('../assets/offers/caring/4.jpg')},
-          {src: require('../assets/offers/caring/5.jpg')},
+          {src: require('../assets/offers/caring/5.jpg'), isVertical: true},
           {src: require('../assets/offers/caring/5a.jpg')},
           {src: require('../assets/offers/caring/5b.jpg')},
           {src: require('../assets/offers/caring/6.jpg')},
-          {src: require('../assets/offers/caring/7.jpg')},
+          {src: require('../assets/offers/caring/7.jpg'), isVertical: true},
           {src: require('../assets/offers/caring/8.jpg')},
           {src: require('../assets/offers/caring/11.jpg')},
-          {src: require('../assets/offers/caring/11ab.jpg')},
+          {src: require('../assets/offers/caring/11ab.jpg'), isVertical: true},
           {src: require('../assets/offers/caring/12.jpg')},
-          {src: require('../assets/offers/caring/13.jpg')},
+          {src: require('../assets/offers/caring/13.jpg'), isVertical: true},
           {src: require('../assets/offers/caring/14.jpg')},
-          {src: require('../assets/offers/caring/15.jpg')},
+          {src: require('../assets/offers/caring/15.jpg'), isVertical: true},
           {src: require('../assets/offers/caring/16.jpg')},
           {src: require('../assets/offers/caring/17.jpg')},
-          {src: require('../assets/offers/caring/18.jpg')},
+          {src: require('../assets/offers/caring/18.jpg'), isVertical: true},
           {src: require('../assets/offers/caring/19.jpg')},
           {src: require('../assets/offers/caring/20.jpg')},
           {src: require('../assets/offers/caring/21.jpg')},
@@ -167,16 +175,16 @@ export default {
         ],
         mainPhoto: require('../assets/offers/tree/2.jpg'),
         photos: [
-          {src: require('../assets/offers/tree/1.jpg')},
-          {src: require('../assets/offers/tree/2.jpg')},
+          {src: require('../assets/offers/tree/1.jpg'), isVertical: true},
           {src: require('../assets/offers/tree/3.jpg')},
-          {src: require('../assets/offers/tree/4.jpg')},
-          {src: require('../assets/offers/tree/5.jpg')},
+          {src: require('../assets/offers/tree/5.jpg'), isVertical: true},
           {src: require('../assets/offers/tree/6.jpg')},
-          {src: require('../assets/offers/tree/7.jpg')},
-          {src: require('../assets/offers/tree/8.jpg')},
-          {src: require('../assets/offers/tree/9.jpg')},
-          {src: require('../assets/offers/tree/10.jpg')},
+          {src: require('../assets/offers/tree/10.jpg'), isVertical: true},
+          {src: require('../assets/offers/tree/4.jpg')},
+          {src: require('../assets/offers/tree/8.jpg'), isVertical: true},
+          {src: require('../assets/offers/tree/2.jpg')},
+          {src: require('../assets/offers/tree/7.jpg'), isVertical: true},
+          {src: require('../assets/offers/tree/9.jpg'), isVertical: true}
         ]
       },
       {
@@ -189,9 +197,9 @@ export default {
         mainPhoto: require('../assets/offers/wood/1.jpg'),
         photos: [
           {src: require('../assets/offers/wood/1.jpg')},
-          {src: require('../assets/offers/wood/2.jpg')},
+          {src: require('../assets/offers/wood/2.jpg'), isVertical: true},
           {src: require('../assets/offers/wood/3.jpg')},
-          {src: require('../assets/offers/wood/4.jpg')},
+          {src: require('../assets/offers/wood/4.jpg'), isVertical: true},
           {src: require('../assets/offers/wood/5.jpg')},
           {src: require('../assets/offers/wood/6.jpg')},
           {src: require('../assets/offers/wood/7.jpg')},
@@ -201,21 +209,21 @@ export default {
           {src: require('../assets/offers/wood/11.jpg')},
           {src: require('../assets/offers/wood/12.jpg')},
           {src: require('../assets/offers/wood/13.jpg')},
-          {src: require('../assets/offers/wood/14.jpg')},
-          {src: require('../assets/offers/wood/15.jpg')},
-          {src: require('../assets/offers/wood/16.jpg')},
+          {src: require('../assets/offers/wood/14.jpg'), isVertical: true},
           {src: require('../assets/offers/wood/17.jpg')},
           {src: require('../assets/offers/wood/18.jpg')},
-          {src: require('../assets/offers/wood/19.jpg')},
+          {src: require('../assets/offers/wood/19.jpg'), isVertical: true},
           {src: require('../assets/offers/wood/20.jpg')},
           {src: require('../assets/offers/wood/21.jpg')},
           {src: require('../assets/offers/wood/22.jpg')},
-          {src: require('../assets/offers/wood/23.jpg')},
+          {src: require('../assets/offers/wood/23.jpg'), isVertical: true},
           {src: require('../assets/offers/wood/24.jpg')},
-          {src: require('../assets/offers/wood/25.jpg')},
+          {src: require('../assets/offers/wood/25.jpg'), isVertical: true},
           {src: require('../assets/offers/wood/26.jpg')},
           {src: require('../assets/offers/wood/27.jpg')},
           {src: require('../assets/offers/wood/28.jpg')},
+          {src: require('../assets/offers/wood/15.jpg')},
+          {src: require('../assets/offers/wood/16.jpg')},
         ]
       },
       {
@@ -227,14 +235,14 @@ export default {
         ],
         mainPhoto: require('../assets/offers/flowers/2.jpg'),
         photos: [
-          {src: require('../assets/offers/flowers/1.jpg')},
+          {src: require('../assets/offers/flowers/1.jpg'), isVertical: true},
           {src: require('../assets/offers/flowers/2.jpg')},
-          {src: require('../assets/offers/flowers/3.jpg')},
+          {src: require('../assets/offers/flowers/3.jpg'), isVertical: true},
           {src: require('../assets/offers/flowers/4.jpg')},
           {src: require('../assets/offers/flowers/5.jpg')},
-          {src: require('../assets/offers/flowers/6.jpg')},
+          {src: require('../assets/offers/flowers/6.jpg'), isVertical: true},
           {src: require('../assets/offers/flowers/7.jpg')},
-          {src: require('../assets/offers/flowers/8.jpg')},
+          {src: require('../assets/offers/flowers/8.jpg'), isVertical: true},
         ]
       }
     ],
@@ -298,6 +306,9 @@ export default {
     goToDetails(subPage) {
       this.$router.push('/oferta/' + subPage)
     },
+    goToRealizations() {
+      this.$router.push('/realizacje')
+    },
     openGallery(currentPhoto) {
       this.currentPhoto = currentPhoto
       this.isGalleryOpen = true;
@@ -327,12 +338,24 @@ export default {
         font-weight: bold;
         color: white;
         position: absolute;
-        top: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
         font-size: 24px;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        span {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 250px;
+          text-align: left;
+          @media (min-width: 576px) {
+            width: 500px;
+          }
+        }
         @media (min-width: 576px) {
-          font-size: 42px;
+          font-size: 36px;
         }
         @media (min-width: 768px) {
           font-size: 54px;
@@ -340,34 +363,78 @@ export default {
       }
       &-image {
         width: 100%;
-        max-height: 400px;
+        height: 200px;
         object-fit: cover;
-      } 
+        @media (min-width: 768px) {
+          height: 300px;
+        }
+      }
+      &-overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        opacity: 0.5;
+      }
     }
     &__body {
       display: flex;
       width: 100%;
+      flex-direction: column;
+      @media (min-width: 768px) {
+        flex-direction: row;
+      }
     }
     &__menu {
-      &-item{
+      &-item {
         cursor: pointer;
         padding: 12px 0;
         border-bottom: 1px solid grey;
       }
+      &-item {
+        &--selected {
+          font-weight: 600;
+        }
+      }
+      &-projects {
+        background-color: #124A2F;
+        color: white;
+        padding: 20px 30px;
+        margin-top: 56px;
+        font-weight: 500;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-decoration: underline;
+      }
     }
     &__left {
-      width: 30%;
-      padding: 24px 36px;
+      width: 100%;
+      padding: 0 12px 36px 12px;
       font-weight: 200;
+      order: 1;
+      @media (min-width: 576px) {
+        padding: 24px 36px;
+      }
       &-title {
         font-size: 24px;
         font-weight: bold;
         margin-bottom: 8px;
       }
+      @media (min-width: 768px) {
+        width: 30%;
+      }
     }
     &__right {
-      width: 70%;
-      padding: 24px 36px;
+      width: 100%;
+      padding: 24px 12px;
+      @media (min-width: 576px) {
+        padding: 24px 36px;
+      }
+      @media (min-width: 768px) {
+        width: 70%;
+      }
       &-title {
         font-size: 24px;
         color: #124A2F;
@@ -384,16 +451,30 @@ export default {
       &-image {
         cursor: pointer;
         width: 100%;
-        height: 250px;
         border-radius: 10px;
         object-fit: cover;
-        margin-bottom: 16px;
+        margin-bottom: 12px;
+        height: 250px;
+        @media (min-width: 576px) {
+          height: 190px;
+          margin-bottom: 16px;
+        }
+        @media (min-width: 992px) {
+          height: 250px;
+        }
         &-container {
-          column-count: 2;
+          @media (min-width: 576px) {
+            column-count: 2;
+          }
           width: 100%;
         }
         &--vertical {
-          height: 500px;
+          @media (min-width: 576px) {
+            height: 396px;
+          }
+          @media (min-width: 992px) {
+            height: 516px;
+          }
         }
       }
     }
