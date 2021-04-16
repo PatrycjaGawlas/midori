@@ -6,7 +6,7 @@
       <div class="offer__section__text">
         <div class="offer__section__text__title">Systemy Automatycznego Nawadniania</div>
         <div class="offer__section__text__description">Ze względu na środowisko oraz finanse warto zaopatrzyć ogród w system automatycznego nawadniania. </div>
-        <b-button @click="goToDetails('systemy')" class="offer__section__text__button" pill variant="outline-secondary">Wiecej</b-button>
+        <div @click="goToDetails('systemy')" class="offer__section__text__button">Wiecej</div>
       </div>
     </div>
     <div class="offer__section">
@@ -14,7 +14,7 @@
       <div class="offer__section__text">
         <div class="offer__section__text__title">Projekt</div>
         <div class="offer__section__text__description">Prawidłowo zaprojektowany ogród będzie tańszy i łatwy w utrzymaniu ale przede wszystkim coraz piękniejszy z biegiem lat.</div>
-        <b-button @click="goToDetails('projekt')" class="offer__section__text__button" pill variant="outline-secondary">Wiecej</b-button>
+        <div @click="goToDetails('projekt')" class="offer__section__text__button">Wiecej</div>
       </div>
     </div>
     <div class="offer__section">
@@ -22,7 +22,7 @@
       <div class="offer__section__text">
         <div class="offer__section__text__title">Oświetlenie ogrodu</div>
         <div class="offer__section__text__description">Oświetlając ogród nadajemy mu zupełnie innego charakteru oraz wydłużamy czas , w którym możemy z niego korzystać na przykład podczas spotkań ze znajomymi. </div>
-        <b-button @click="goToDetails('oswietlenie')" class="offer__section__text__button" pill variant="outline-secondary">Wiecej</b-button>
+        <div @click="goToDetails('oswietlenie')" class="offer__section__text__button">Wiecej</div>
       </div>
     </div>
     <div class="offer__section">
@@ -30,7 +30,7 @@
       <div class="offer__section__text">
         <div class="offer__section__text__title">Pielęgnacja</div>
         <div class="offer__section__text__description">Każdy, nawet najmniej wymagający ogród wymaga od nas ciągłej troski.</div>
-        <b-button @click="goToDetails('pielegnacja')" class="offer__section__text__button" pill variant="outline-secondary">Wiecej</b-button>
+        <div @click="goToDetails('pielegnacja')" class="offer__section__text__button">Wiecej</div>
       </div>
     </div>
     <div class="offer__section">
@@ -38,7 +38,7 @@
       <div class="offer__section__text">
         <div class="offer__section__text__title">Sadzenie większych drzew</div>
         <div class="offer__section__text__description">Sadząc większe drzewa, oszczędzamy czas który musi upłynąć do uzyskania finalnego wyglądu ogrodu.</div>
-        <b-button @click="goToDetails('drzewa')" class="offer__section__text__button" pill variant="outline-secondary">Wiecej</b-button>
+        <div @click="goToDetails('drzewa')" class="offer__section__text__button">Wiecej</div>
       </div>
     </div>
     <div class="offer__section">
@@ -46,7 +46,7 @@
       <div class="offer__section__text">
         <div class="offer__section__text__title">Kamień i drewno</div>
         <div class="offer__section__text__description">Kamień i drewno to ekologiczne, trwałe i zawsze modne materiały, z których można wykonać wszystkie elementy małej architektury pasujące do każdego ogrodu.</div>
-        <b-button @click="goToDetails('kamien')" class="offer__section__text__button" pill variant="outline-secondary">Wiecej</b-button>
+        <div @click="goToDetails('kamien')" class="offer__section__text__button">Wiecej</div>
       </div>
     </div>
     <div class="offer__section">
@@ -54,7 +54,7 @@
       <div class="offer__section__text">
         <div class="offer__section__text__title">Rabaty z polnymi kwiatami</div>
         <div class="offer__section__text__description">Chcąc mieć zdrowy ogród warto zadbać o różnorodność nie tylko flory ale też fauny. Obecność wielu gatunków owadów, gadów, płazów i ptaków znacznie przyczynia się do naturalnego eliminowania szkodników ogrodowych.</div>
-        <b-button @click="goToDetails('rabaty')" class="offer__section__text__button" pill variant="outline-secondary">Wiecej</b-button>
+        <div @click="goToDetails('rabaty')" class="offer__section__text__button">Wiecej</div>
       </div>
     </div>
   </div>
@@ -137,11 +137,15 @@ export default {
           }
         }
         &__button {
-          border-color: #2a7d2e;
+          border-radius: 25px;
+          border: 1px solid #2a7d2e;
           color: #2a7d2e;
           font-size: 10px;
           padding: 10px 22px;
-          font-weight: bold;
+          font-weight: 600;
+          &:hover {
+            cursor: pointer;
+          }
           @media (min-width: 768px) {
             font-size: 12px;
             padding: 12px 24px;

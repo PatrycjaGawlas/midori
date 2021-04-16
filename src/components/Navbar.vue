@@ -1,7 +1,7 @@
 <template>
-  <b-navbar toggleable="md"  type="dark" class="navbar" :class="[currentPath !== '/' ? 'navbar--light' : '']">
+  <b-navbar toggleable="md"  type="dark" class="navbar" :class="[currentPath !== '/' && currentPath !== '/kontakt' ? 'navbar--light' : '']">
     <b-navbar-brand href="/" class="navbar__logo">
-      <template v-if="currentPath === '/'">
+      <template v-if="currentPath === '/' || currentPath === '/kontakt'">
         <img class="navbar__logo--img d-none d-md-inline" src="../assets/logo.png" />
         <img class="navbar__logo--img d-inline d-md-none" src="../assets/logo-green.png" />
       </template>
@@ -30,7 +30,7 @@
           </router-link>
           <router-link to="/kontakt" v-slot="{ href }">
             <b-nav-item :href="href" class="d-inline d-md-none">Kontakt</b-nav-item>
-            <button type="button" class="d-none d-md-inline navbar__contact-button btn btn-success">KONTAKT</button>
+            <button type="button" @click="redirectToContact" class="d-none d-md-inline navbar__contact-button btn btn-success">KONTAKT</button>
           </router-link>
         </b-navbar-nav>
       </b-navbar-nav>
@@ -44,6 +44,11 @@ export default {
   computed: {
     currentPath() {
       return this.$route.path
+    }
+  },
+  methods: {
+    redirectToContact() {
+      this.$router.push('/kontakt')
     }
   }
 };

@@ -8,5 +8,6 @@ module.exports = {
           .rule('vue')
               .use("vue-loader")
                   .tap(options => merge(options, { transformAssetUrls:{ 'b-carousel-slide': 'img-src'}} ))
-  }
+  },
+  publicPath: '/'
 }

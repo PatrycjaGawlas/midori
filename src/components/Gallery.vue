@@ -3,6 +3,10 @@
     <BIconX @click="closeGallery" font-scale="3" variant="light" class="gallery__close"/>
     <BIconChevronLeft @click="previousPhoto" font-scale="3" variant="light" class="gallery__chevron gallery__chevron--left"/>
     <img :src="currentPhoto" class="gallery__image"/>
+    <!-- <div v-else>
+      <img v-if="!doubleMode" :src="currentPhoto" class="gallery__image"/>
+      <img v-if="!doubleMode" :src="currentPhoto" class="gallery__image"/>
+    </div> -->
     <BIconChevronRight @click="nextPhoto" font-scale="3" variant="light" class="gallery__chevron gallery__chevron--right"/>
   </div>
 </template>

@@ -25,7 +25,6 @@
 </template>
 
 <script>
-import { BIconArrowsAngleExpand, BIconChevronRight } from 'bootstrap-vue'
 import Gallery from '@/components/Gallery.vue'
 export default {
   components: {
@@ -503,7 +502,6 @@ export default {
           border-radius: 4px;
         }
       }
-
       &:hover {
         .realizations__image-overlay-bg {
           opacity: 0.6;

@@ -12,14 +12,29 @@
         <div class="carousel__text">
           <div class="carousel__text--title">OGRODY MIDORI</div>
           <div class="carousel__text--description">POMYSŁ – PROJEKT - WYKONANIE</div>
-          <b-button class="carousel__text__button" pill variant="outline-secondary">O nas</b-button>
-          <b-button class="carousel__text__button carousel__text__button--primary" pill variant="primary">Kontakt</b-button>
+          <div class="carousel__text__button-wrapper">
+            <div class="carousel__text__button" @click="redirectToAbout">O nas</div>
+            <div class="carousel__text__button carousel__text__button--primary" @click="redirectToContact">Kontakt</div>
+          </div>
         </div>
         <b-carousel-slide img-src="./../assets/1.png"></b-carousel-slide>
-        <b-carousel-slide img-src="./../assets/2.png"></b-carousel-slide>
         <b-carousel-slide img-src="./../assets/3.png"></b-carousel-slide>
     </b-carousel>
 </template>
+
+<script>
+export default {
+  methods: {
+    redirectToAbout() {
+      this.$router.push('/o-nas')
+    },
+    redirectToContact() {
+      this.$router.push('/kontakt')
+    }
+  }
+}
+
+</script>
 
 <style lang="scss" scoped>
   .carousel {
@@ -29,16 +44,22 @@
       text-align: center;
       color: white;
       position: absolute;
-      z-index: 20;
+      z-index: 1;
       top: 35%;
       left: 50%;
       transform: translate(-50%, 0);
-      
+      display: flex;
+      flex-direction: column;
       &__button {
+        border-radius: 25px;
         border-color: white;
+        border: 1px solid white;
         color: white;
         font-size: 10px;
         padding: 10px 22px;
+        &:hover {
+          cursor: pointer;
+        }
         @media (min-width: 768px) {
           font-size: 12px;
           padding: 12px 24px;
@@ -47,6 +68,10 @@
           margin-left: 20px;
           background-color: white;
           color: black;
+        }
+        &-wrapper {
+          display: flex;
+          justify-content: center;
         }
       }
       &--title {

@@ -70,9 +70,11 @@ Absolwent UR w Krakowie na kierunku Ogrodnictwo -->
         @media (min-width: 768px) {
           font-size: 54px;
         }
+        z-index: 9;
       }
       &__image {
         width: 100%;
+        filter: brightness(50%);
       }
     }
     &__content-top {
@@ -85,7 +87,7 @@ Absolwent UR w Krakowie na kierunku Ogrodnictwo -->
         padding: 40px 50px;
       }
       @media (min-width: 768px) {
-        padding: 50px 60px;
+        padding: 40px;
       }
 
       &--left {
@@ -93,6 +95,9 @@ Absolwent UR w Krakowie na kierunku Ogrodnictwo -->
         font-size: 18px;
         font-weight: bold;
         padding: 0;
+        p {
+          margin: 0;
+        }
         @media (min-width: 576px) {
           font-size: 23px;
           padding-right: 12px;
@@ -100,7 +105,7 @@ Absolwent UR w Krakowie na kierunku Ogrodnictwo -->
         }
         @media (min-width: 768px) {
           font-size: 28px;
-          padding: 70px 60px;
+          padding: 30px 50px;
         }
       }
       &--right {
@@ -122,7 +127,7 @@ Absolwent UR w Krakowie na kierunku Ogrodnictwo -->
       align-items: center;
       flex-direction: column;
       @media (min-width: 576px) {
-        padding: 70px 0px;
+        padding: 50px 0px;
         flex-direction: row;
       }
       &--top-mobile {
