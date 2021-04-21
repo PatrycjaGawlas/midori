@@ -1,6 +1,6 @@
 <template>
   <b-navbar toggleable="md"  type="dark" class="navbar" :class="[currentPath !== '/' && currentPath !== '/kontakt' ? 'navbar--light' : '']">
-    <b-navbar-brand href="/" class="navbar__logo">
+    <b-navbar-brand @click="redirectToHome" class="navbar__logo">
       <template v-if="currentPath === '/' || currentPath === '/kontakt'">
         <img class="navbar__logo--img d-none d-md-inline" src="../assets/logo.png" />
         <img class="navbar__logo--img d-inline d-md-none" src="../assets/logo-green.png" />
@@ -19,19 +19,11 @@
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav class="ml-auto">
         <b-navbar-nav>
-          <router-link to="/o-nas" v-slot="{ href }">
-            <b-nav-item :href="href">O nas</b-nav-item>
-          </router-link>
-          <router-link to="/oferta" v-slot="{ href }">
-            <b-nav-item :href="href">Oferta</b-nav-item>
-          </router-link>
-          <router-link to="/realizacje" v-slot="{ href }">
-            <b-nav-item :href="href">Realizacje</b-nav-item>
-          </router-link>
-          <router-link to="/kontakt" v-slot="{ href }">
-            <b-nav-item :href="href" class="d-inline d-md-none">Kontakt</b-nav-item>
-            <button type="button" @click="redirectToContact" class="d-none d-md-inline navbar__contact-button btn btn-success">KONTAKT</button>
-          </router-link>
+          <b-nav-item @click="redirectToAbout">O nas</b-nav-item>
+          <b-nav-item @click="redirectToOffers">Oferta</b-nav-item>
+          <b-nav-item @click="redirectToRealizations">Realizacje</b-nav-item>
+          <b-nav-item class="d-inline d-md-none">Kontakt</b-nav-item>
+          <button type="button" @click="redirectToContact" class="d-none d-md-inline navbar__contact-button btn btn-success">KONTAKT</button>
         </b-navbar-nav>
       </b-navbar-nav>
     </b-collapse>
@@ -47,8 +39,20 @@ export default {
     }
   },
   methods: {
+    redirectToHome() {
+      this.$router.push('/')
+    },
     redirectToContact() {
       this.$router.push('/kontakt')
+    },
+    redirectToAbout() {
+      this.$router.push('/o-nas')
+    },
+    redirectToOffers() {
+      this.$router.push('/oferta')
+    },
+    redirectToRealizations() {
+      this.$router.push('/realizacje')
     }
   }
 };
@@ -137,10 +141,10 @@ export default {
 
     .navbar-nav {
       .nav-link {
-        color: black;
-              &:hover {
-        color: black
-      }
+        color: black !important;
+        &:hover {
+          color: black
+        }
       }
     }
   }
