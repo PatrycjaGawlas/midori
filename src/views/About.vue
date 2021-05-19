@@ -6,24 +6,20 @@
     </div>
     <div class="about__content-top">
       <div class="about__content-top--left">
-        <p>Nasza oferta skierowana jest do wszystkich osób prywatnych oraz firm pragnących otoczyć zielenią swój dom lub przedsiębiorstwo.</p>
+        <p>Godny zaufania partner dla osób prywatnych jak i firm pragnących otoczyć zielenią swój dom lub przedsiębiorstwo.</p>
       </div>
       <div class="about__content-top--right">
-        <p>Od 2009 roku profesjonalnie zajmuję się projektowaniem i zakładaniem ogrodów. Specjalizuję się w ogrodach naturalistycznych pozwalających połączyć działkę z otaczającym krajobrazem.</p>
+        <p>Midori to firma, która zajmuje się profesjonalnym projektowaniem i zakładaniem ogrodów od 2009 roku. Specjalnością firmy jest tworzenie ogrodów naturalistycznych, które dzięki przemyślanemu projektowi, wpisują adaptowaną przestrzeń w otaczający ją krajobraz, przy jednoczesnym uwzględnieniu wszelkich potrzeb inwestora.</p>
       </div>
-<!-- Fot.
-mgr. inż. Marek Domański
-Miłośnik roślin i projektant ogrodów. 
-Absolwent UR w Krakowie na kierunku Ogrodnictwo -->
     </div>
     <div class="about__content-bottom">
       <div class="about__content-bottom--top-mobile">
         <img class="about__content-bottom__image" src="../assets/about-us.png"/>
       </div>
       <div class="about__content-bottom--left">
-        <p>Idąc naprzeciw wymaganiom klientów projektuję ogrody łatwe i tanie w utrzymaniu.</p>
-        <p>Dokładam wszelkich starań aby dobierać rośliny odpowiednie do danego stanowiska. Dzięki temu rosną bujnie a późniejsza ich pielęgnacja nie jest uciążliwa.</p>
-        <p>W połączeniu z automatycznymi systemami nawadniania i koszenia trawników otrzymują Państwo ogród będący miejscem relaksu i wymagającym mniej pracy.</p>
+        <p>Celem firmy jest tworzenie unikalnych projektów ogrodów składających się z określonych stref funkcyjnych.</p>
+        <p>Odpowiedni dobór roślin, respektujący ich indywidualne potrzeby oraz warunki panujące w danym terenie to kluczowy punkt wyjścia do każdego projektu. Jest to gwarancją zdrowego i bujnego wzrostu roślin, a ich późniejsza pielęgnacja nie przysparza większych trudności.</p>
+        <p>Zastosowanie automatycznych systemów nawadniania i koszenia trawników oraz oryginalnych rozwiązań małej architektury pozwala na stworzenie przestrzeni będącej dla każdego inwestora wizytówką oraz miejscem relaksu, która przy minimalnym nakładzie prac pielęgnacyjnych, będzie cieszyć przez kolejne lata ewoluując wraz ze wzrostem roślin.</p>
       </div>
       <div class="about__content-bottom--right">
         <img class="about__content-bottom__image" src="../assets/about-us.png"/>

@@ -2,19 +2,19 @@
   <div class="offer">
     <div class="offer__header-title">Oferta</div>
     <div class="offer__section">
-      <img class="offer__image" src="../assets/watering.png"/>
-      <div class="offer__section__text">
-        <div class="offer__section__text__title">Systemy Automatycznego Nawadniania</div>
-        <div class="offer__section__text__description">Ze względu na środowisko oraz finanse warto zaopatrzyć ogród w system automatycznego nawadniania. </div>
-        <div @click="goToDetails('systemy')" class="offer__section__text__button">Wiecej</div>
-      </div>
-    </div>
-    <div class="offer__section">
-      <img class="offer__image offer__image-order" src="../assets/project.png"/>
+      <img class="offer__image" src="../assets/project.png"/>
       <div class="offer__section__text">
         <div class="offer__section__text__title">Projekt</div>
         <div class="offer__section__text__description">Prawidłowo zaprojektowany ogród będzie tańszy i łatwy w utrzymaniu ale przede wszystkim coraz piękniejszy z biegiem lat.</div>
         <div @click="goToDetails('projekt')" class="offer__section__text__button">Wiecej</div>
+      </div>
+    </div>
+    <div class="offer__section">
+      <img class="offer__image offer__image-order" src="../assets/watering.png"/>
+      <div class="offer__section__text">
+        <div class="offer__section__text__title">System Automatycznego Nawadniania</div>
+        <div class="offer__section__text__description">Ze względu na środowisko oraz finanse warto zaopatrzyć ogród w system automatycznego nawadniania. </div>
+        <div @click="goToDetails('systemy')" class="offer__section__text__button">Wiecej</div>
       </div>
     </div>
     <div class="offer__section">

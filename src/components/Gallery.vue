@@ -3,10 +3,6 @@
     <BIconX @click="closeGallery" font-scale="3" variant="light" class="gallery__close"/>
     <BIconChevronLeft @click="previousPhoto" font-scale="3" variant="light" class="gallery__chevron gallery__chevron--left"/>
     <img :src="currentPhoto" class="gallery__image"/>
-    <!-- <div v-else>
-      <img v-if="!doubleMode" :src="currentPhoto" class="gallery__image"/>
-      <img v-if="!doubleMode" :src="currentPhoto" class="gallery__image"/>
-    </div> -->
     <BIconChevronRight @click="nextPhoto" font-scale="3" variant="light" class="gallery__chevron gallery__chevron--right"/>
   </div>
 </template>
@@ -32,6 +28,7 @@ export default {
   }),
   methods: {
     nextPhoto() {
+      console.log('next')
       if (this.currentPhotoIndex === this.photos.length - 1 ) {
         this.currentPhoto = this.photos[0].src
       } else {
@@ -58,6 +55,15 @@ export default {
   },
   mounted() {
     this.currentPhoto = this.photo || ''
+
+    window.addEventListener('keydown', (e) => {
+      if (e.keyCode === 37) {
+        this.previousPhoto()
+      }
+      if(e.keyCode === 39) {
+        this.nextPhoto()
+      }
+    })
   }
 }
 </script>

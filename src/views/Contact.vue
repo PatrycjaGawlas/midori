@@ -9,7 +9,7 @@
       <div class="contact__box">
         <BIconGeoAlt class="contact__icon"/>
         <div>Marek Domański</div>
-        <div>Pszczyna</div>
+        <div>Żory</div>
       </div>
       <div class="contact__box">
         <BIconPhoneVibrate class="contact__icon"/> 
