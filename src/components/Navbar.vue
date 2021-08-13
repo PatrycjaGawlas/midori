@@ -22,7 +22,7 @@
           <b-nav-item @click="redirectToAbout">O nas</b-nav-item>
           <b-nav-item @click="redirectToOffers">Oferta</b-nav-item>
           <b-nav-item @click="redirectToRealizations">Realizacje</b-nav-item>
-          <b-nav-item class="d-inline d-md-none">Kontakt</b-nav-item>
+          <b-nav-item @click="redirectToContact" class="d-inline d-md-none">Kontakt</b-nav-item>
           <button type="button" @click="redirectToContact" class="d-none d-md-inline navbar__contact-button btn btn-success">KONTAKT</button>
         </b-navbar-nav>
       </b-navbar-nav>
@@ -146,6 +146,15 @@ export default {
           color: black
         }
       }
+    }
+  }
+
+  &__phone {
+    &-icon {
+
+    }
+    &-number {
+
     }
   }
 }

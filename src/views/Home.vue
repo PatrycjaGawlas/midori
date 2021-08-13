@@ -49,6 +49,15 @@
         <div class="home__button" @click="redirectToRealizations">Wszystkie realizacje</div>
       </div>
     </div>
+    <div class="home__footer">
+      <div class="home__footer-icons">
+        Icons made by 
+        <a href="https://www.freepik.com" title="Freepik">Freepik</a>
+         from <a href="https://www.flaticon.com/" title="Flaticon">
+         www.flaticon.com
+         </a>
+      </div>
+    </div>
     <Gallery v-if="isGalleryOpen" @onClose="closeGallery" :photos="galleryPhotos" :photo="galleryFirstPhoto" />
   </div>
 </template>
@@ -470,6 +479,23 @@ export default {
             position: relative;
           }
         }
+    }
+  }
+  &__footer {
+    width: 100%;
+    height: 40px;
+    background-color: #383736;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a {
+      color: white;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    &-icons {
+      font-size: 12px;
     }
   }
 }
